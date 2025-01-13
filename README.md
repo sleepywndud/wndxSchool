@@ -1,2 +1,1 @@
-SCHOOL STUFF
-I hate school
+jan 14th
