@@ -1,7 +1,7 @@
 # INSERT DESIRED PRINT TEXT BETWEEN THE `m` & AND THE SINGLE QUOTATION MARKS `'`
 # SINGLE QM -> DOUBLE QM ALSO WORKS
 
-print('\033[91m) # RED
+print('\033[91m') # RED
 print('\033[93m') # ORANGE
 print('\033[92m') # GREEN
 print('\033[96m') # CYAN
