@@ -10,6 +10,6 @@ else:
 age = int(input("Enter your age: "))
 
 if age != 1:
-    print("You are {age} years old.")
+    print(f"You are {age} years old.")
 elif age == 1:
     print(f"You are {age} year old.")
