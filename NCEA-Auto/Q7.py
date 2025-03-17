@@ -15,4 +15,4 @@ while checker == True:
     word = str(input("Give a word that starts with H: "))
     checker = word.startswith(("H", "h")) #  True if H/h, False if not
 
-print(f"No, {word} does not start with H!")
+print(f"No, {word} doesn't start with H!")
