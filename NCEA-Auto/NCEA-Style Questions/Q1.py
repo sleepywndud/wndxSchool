@@ -7,20 +7,20 @@ else:
 
 #########################
 
-voltage = []
-counter = 0
+voltage = [] # LIST TO CONTAIN ALL VOLTAGE VALUES
+counter = 0 # USED INSIDE FOR LOOP WHEN INDEXING
 while True:
     try:
-        w = float(input("Enter your input: ")) 
-        if w < 0: 
+        winput = float(input("Enter your input: ")) 
+        if winput < 0: # STOPS IF NEGATIVE NUMBERS INPUT
             break
-        else:
-            voltage.append(w)
+        else: # REPEATS LOOP IF POSITIVE NUMBERS INPUT
+            voltage.append(winput)
 
-    except ValueError: 
+    except ValueError: # BLOCKS ANY VALUES THAT ISN'T INT/FLOAT
         print("Not robot compliant!")
 
-for w in range(len(voltage)):
+for winput in range(len(voltage)): # LOOPS PRINTING BEEP/BOOP
     if voltage[counter] >= 1.2:
         print("Beep")
         counter += 1
