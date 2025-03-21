@@ -12,12 +12,13 @@ cold = 33
 hot = 43
 rightmin = 34
 rightmax = 42
+byebye = -1
 counter = 0
 
 while True:
     try:
         userinput = float(input("Enter the temperature: "))
-        if userinput == -1:
+        if userinput == byebye:
             break
         else:
             temperatures.append(userinput)
