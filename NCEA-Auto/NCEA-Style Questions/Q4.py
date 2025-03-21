@@ -10,12 +10,13 @@ else:
 minimum = 80  
 maximum = 100
 nerds = 0
+byebye = 'done'
 
 grades = []
 
 while True:
-    user_input = input("Enter a score, or type 'done' to exit: ")
-    if user_input.upper() == 'DONE': # BREAK IF INPUT == 'DONE'
+    user_input = input("Enter a score, or type 'done' to exit: ").lower()
+    if user_input == byebye: # BREAK IF INPUT == 'DONE'
         break
     try:
         grade = int(user_input)  # FLOATS TO INTEGER
