@@ -2,7 +2,7 @@ import os
 
 
 def clear():
-    if os.system == "nt":
+    if os.name == "nt":
         os.system("CLS")
     else:
         os.system("CLEAR")
