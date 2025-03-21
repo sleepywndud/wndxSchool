@@ -10,6 +10,7 @@ else:
 minimum = 80  
 maximum = 100
 nerds = 0
+one = 1
 
 while True:
     user_input = input("Enter a score, or type 'done' to exit: ")
@@ -18,11 +19,11 @@ while True:
     try:
         grade = int(user_input) # INTS THE USER INPUT
         if minimum <= grade <= maximum: # CHECKING TO SEE IF IT MEETS NERDS
-            nerds += 1
+            nerds += one
     except ValueError: # BLOCKS OTHER DATA TYPES (STR, COMPLEX)
         print("Invalid score!") 
 
-if nerds == 1:
+if nerds == one:
     print(f"This class has {nerds} smart student!")
 else:
     print(f"This class has {nerds} smart students!")
