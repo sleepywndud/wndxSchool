@@ -8,23 +8,23 @@ else:
 #########################
 
 init = 200
-remaining = [init]
-bankrupt = 0
+remaining = [init] # LIST STARTING WITH 200
+bankrupt = 0 
 
 while True:
     try:
         spending = int(input("Enter the amount spent: "))
-        if spending == bankrupt:
+        if spending == bankrupt: # BREAKS WHEN INPUT == 0 
             break
         else:
-            init -= spending
+            init -= spending # ASSIGNS NEW VALUE FOR {INIT}
             remaining.append(init)
-            if init <= bankrupt:
-                break
+            if init <= bankrupt: # BREAKS WHEN YOU HAVE NEGATIVE BALANCES
+                break 
 
-    except ValueError:
+    except ValueError: # PREVENTS OTHER VARIABLE TYPES (STR, FLOAT, COMPLEX)
         print("That is not a valid transaction.")
 
 print("My bank balances have been:")
-for printing in remaining:
+for printing in remaining: # PRINTS MONEY HISTORY VERTICALLY
     print(printing)
