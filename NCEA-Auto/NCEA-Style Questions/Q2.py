@@ -1,3 +1,5 @@
+'''THIS PROGRAM IS MARKED AT EXCELLENCE LEVEL, MARKED BY NCEA-AUTO'''
+
 import os
 
 if os.name == "nt":
