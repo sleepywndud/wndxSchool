@@ -26,5 +26,5 @@ while True:
         print("That is not a valid transaction.")
 
 print("My bank balances have been:")
-for w in remaining:
-    print(w)
+for printing in remaining:
+    print(printing)
