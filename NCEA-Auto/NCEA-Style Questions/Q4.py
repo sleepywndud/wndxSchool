@@ -10,7 +10,6 @@ else:
 minimum = 80  
 maximum = 100
 nerds = 0
-one = 1
 
 grades = []
 
@@ -26,9 +25,9 @@ while True:
 
 for grade in grades:
     if minimum <= grade <= maximum:  # FILTER NETRDS
-        nerds += one
+        nerds += 1
 
-if nerds == one:
+if nerds == 1:
     print(f"This class has {nerds} smart student!")
 else:
     print(f"This class has {nerds} smart students!")
