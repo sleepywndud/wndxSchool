@@ -1,6 +1,6 @@
 import os
 
-if os.system == "nt":
+if os.name == "nt":
     os.system("cls")
 else:
     os.system("clear")
