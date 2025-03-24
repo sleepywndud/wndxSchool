@@ -14,22 +14,24 @@ while True:
     try:
         name = str(input("Enter your name: ")).strip().title()
         if len(name) == 0:
-            print("Name cannot be empty. Please enter a valid name.")
+            print("Name cannot be empty. Please enter a valid name.\n")
             continue
 
         age = int(input("Enter your age: "))
         if age < 0:
-            print("Age cannot be negative. Please enter a valid age.")
+            print("Age cannot be negative. Please enter a valid age.\n")
             continue
+        elif age > 130:
+            print("NEW WORLD RECORD FOR THE MOST LIVED PERSON CONGRATULATIONS!!!")
 
         resd = str(input("Are you currently a NZ resident? ('True' for yes, or 'False' for no): ")).upper()
         if resd == 'TRUE' or resd == 'FALSE': # BLOCKS ANY OTHER VARIABLE TYPED INPUT.
             break
         else:
-            print("Please enter a valid input.")
+            print("Please enter a valid input.\n")
 
     except ValueError: # BLOCKS ANY OTHER VARIABLE TYPED INPUT.
-        print("Please enter a valid input.")
+        print("Please enter a valid input.\n")
 
 
 if resd == 'TRUE': # ADDS NAME TO THE RESIDENT LIST IF RESIDENT.
