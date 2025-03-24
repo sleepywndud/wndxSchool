@@ -3,29 +3,32 @@
 import os
 os.system('clear')
 
-temperatures = [] # TEMPERATURES TO HOLD ALL USERINPUTS.
-indexvar = 0 # VARIABLE FOR INDEXING THROUGH THE LIST. 
-
-right_min = 34
-right_max = 42
-
-byebye = -1 # QUIT CONDITION VARIABLE.
+temperatures = []
+cold = 33
+hot = 43
+rightmin = 34
+rightmax = 42
+byebye = -1
+indexvar = 0
 
 while True:
     try:
         userinput = float(input("Enter the temperature: "))
-        if userinput == byebye: # IF USERINPUT IS -1, QUITS THE PROGRAM.
+        if userinput == byebye: # IMMEDIATELY QUITS IF -1 (BYEBYE) ENTERED.
             break
-        else: # APPENDS USERINPUT TO THE TEMPERATURES LIST IF APPROPRIATE VARIABLE TYPE.
+        else: # APPENDS USERINPUT TO THE LIST IF APPROPRIATE VARIABLE TYPE ENTERED.
             temperatures.append(userinput)
 
-    except ValueError: # BLOCKS OTHER VARIABLE TYPES, (EG: STRING, COMPLEX, ETC..)
+    except ValueError: # RESTRICTS ANY OTHER INPUT THAN INT/FLOATS.
         print("Invalid temperature.")
 
-for indexer in range(len(temperatures)): # PRINTS OUTPUT ACCORDINGLY DEPENDING ON CONDITIONS.
-    if temperatures[indexvar] < right_min:
+for userinput in range(len(temperatures)): # INDEXING THROUGH LIST AND PRINTING OUTPUT DEPENDING ON CONDITION.
+    if temperatures[indexvar] <= cold:
         print("too cold")
-    elif temperatures[indexvar] > right_max:
+        indexvar += 1
+    elif temperatures[indexvar] >= hot:
         print("too hot")
-    else:
+        indexvar += 1
+    elif temperatures[indexvar] >= rightmin and temperatures[indexvar] <= rightmax: # BETWEEN THE 'JUST RIGHT' TEMPERATURE CONDITION.
         print("just right")
+        indexvar += 1
