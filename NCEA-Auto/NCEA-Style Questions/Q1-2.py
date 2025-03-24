@@ -19,7 +19,7 @@ while True:
     except ValueError: # BLOCKS OTHER VARIABLE TYPES.
         print("Not robot compliant!")
 
-for w in range(len(batteries)): # INDEXES THROUGH THE LIST TO PRINT BEEP/BOOP.
+for indexer in range(len(batteries)): # INDEXES THROUGH THE LIST TO PRINT BEEP/BOOP.
     if batteries[indexvar] >= goodbattery: # PRINTS BEEP IF BATTERY IS > 1.2.
         print("Beep")
         indexvar += 1
