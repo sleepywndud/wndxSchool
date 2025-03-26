@@ -10,16 +10,16 @@ bankrupt = 0
 while True:
     try:
         spending = int(input("Enter the amount spent:"))
-        if spending == bankrupt:
+        if spending == bankrupt: # BREAKS IF INPUT IS ZERO.
             break
         else:
             init =- spending
-            remaining.append(init)
-            if init <= 0:
+            remaining.append(init) # ADDS USERINPUT TO THE LIST IF DOESN'T MEET CONDITIONS.
+            if init <= bankrupt: # BREAKS IF REMIANING IS ZERO.
                 break
 
-    except ValueError: 
+    except ValueError: # PREVENTS OTHER VARIABLE TYPES.
         print("That is not a valid transaction")
 
-for wndud in remaining:
+for wndud in remaining: # PRINTS SPENDING
     print(wndud)
