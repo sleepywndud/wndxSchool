@@ -2,10 +2,6 @@ import os
 
 os.system('clear')
 
-def debugging():
-    print(passed)
-    print(failed)
-
 passed = []
 failed = []
 
