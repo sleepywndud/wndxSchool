@@ -9,18 +9,22 @@ def debugging():
 passed = []
 failed = []
 
+finish = 'done'
+maxscore = 100
+minscore = 0
+half = 50
 indexnum = 0
 
 while True:
     try:
         score = input("Enter a test score (or type 'done' to finish): ")
-        if score.lower() == 'done': 
+        if score.lower() == finish: 
             break
         score = int(score)
-        if 0 <= score <= 100: 
-            if score < 50:
+        if minscore <= score <= maxscore: 
+            if score < half:
                 failed.append(score)
-            elif score >= 50:
+            elif score >= half:
                 passed.append(score)
         else: 
             print("Invalid input. Please enter a number between 0 and 100.")
