@@ -16,7 +16,7 @@ while True:
             break 
         score = int(score) # CHANGING VARIABLE TYPE TO INTEGER.
         if minscore <= score <= maxscore: 
-            # APPENDING SCORE AS YOU TYPE
+            # APPENDING SCORE AS YOU TYPE.
             if score < half:
                 failed.append(score) 
             elif score >= half:
