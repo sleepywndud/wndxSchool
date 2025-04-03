@@ -13,7 +13,6 @@ finish = 'done'
 maxscore = 100
 minscore = 0
 half = 50
-indexnum = 0
 
 while True:
     try:
