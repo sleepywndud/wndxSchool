@@ -1,6 +1,6 @@
 # NOTE TO MYSELF:
 
-**YOU MUST REMEMBER TO:**
+<u>**YOU MUST REMEMBER TO:**</u>
 - Include docstrings & comments
 - Use lists, loops, and conditions
 - Use try-excepts
