@@ -42,7 +42,7 @@ questions = [
         "answer": "d"
     },
     {
-        "question": "\nTRUE OR FALSE: \n9 / 0 = 0",
+        "question": "\nTRUE OR FALSE (read carefully lol): \n9 / 0 = 0",
         "options": ["    a. FaIse", "    b. False", "    c. Fal5e", "    d. Flase"],
         "answer": "b"
     },
@@ -67,6 +67,7 @@ while True:
                 if answer in ['a', 'b', 'c', 'd']:
                     # checking if answer is correct
                     if answer == question["answer"]:
+                        # NOTE: ANSI COLOR CODES MAY NOT WORK ON CERTAIN DEVICES -- BEST TO NOT USE THEM AT ALL
                         print("\033[92mCorrect! \033[97m")
                         score += 1
                         break
