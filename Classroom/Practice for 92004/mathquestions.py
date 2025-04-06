@@ -1,11 +1,19 @@
-'''PREPARATION PROGRAM FOR THE AS92004 SOFTWARE EXAM'''
+'''
+A PROGRAM TO TEST PEOPLE/STUDENT'S MATH SKILLS.
+
+CREATION DATE: 6TH OF APRIL 2025.
+CREATED BY: WNDX2 (JAMES PARK).
+
+CREATED FOR: PREPARATION FOR THE AS92004 SOFTWARE DEVELOPMENT EXAM.
+
+'''
 
 # NCEA AUTO does not support os import -- remove before submitting
 import os
 os.system('clear')
 
 # list to hold all questions, options using nested lists, and the answer using dictionaries
-# \n[033 stuffs are coloring the text, which increases visibility
+# \n[033 stuffs are coloring the text, which increases visibility for the users
 # spaces in "options" are to make differentiating (between Q, and Option) easier
 questions = [
     {
@@ -53,7 +61,7 @@ while True:
                 for option in question["options"]:
                     print(option)
                 
-                # loop to check if input is valid, and correct
+                # loop to check if input is valid, and adds score depending on answer
                 while True: 
                     try:
                         answer = str(input("\nType your answer: ")).strip().lower()
@@ -90,7 +98,7 @@ while True:
 
         # breaks straight away if user does not want to play (in starting question)
         elif startornot == "n":
-            print("Bye Bozo")
+            print("See you next time!")
             break
         
         # asks again if input is invalid in starting question
