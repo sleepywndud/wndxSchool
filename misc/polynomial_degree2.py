@@ -18,6 +18,7 @@ while True:
         c = float(input("\nc : "))
 
         if a == 0:
+            # IF a == 0, IT WOULD BE A LINEAR, NOT QUADRATIC.
             print("\nMa ERROR.\n")
             continue
 
@@ -30,10 +31,12 @@ while True:
             print("\nTwo Real Solutions (D > 0):")
             print(f"    X1 [{x1}]")
             print(f"    X2 [{x2}]\n")
+            
         elif d == 0:
             x = -b / (2*a)
             print("\nOne Real Solution (D = 0):")
-            print(f"    X1 [{x}] * 2\n")
+            print(f"    X1 [{x}] × 2\n")
+            
         else:
             print("\nNo Real Solution(s) (D < 0).\n")
 
