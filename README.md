@@ -1,1 +1,1 @@
-cmd+s
+school stuff
