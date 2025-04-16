@@ -5,7 +5,7 @@ def clear():
         os.system('cls')
     else:
         os.system('clear')
-clear()
+# clear()
 
 print("\nPolynomial (Degree 2)\n")
 
