@@ -1,8 +1,8 @@
 CREATE TABLE store (
-productid INTEGER PRIMARY KEY,
-name TEXT,
-quantity INTEGER,
-price INTEGER
+  productid INTEGER PRIMARY KEY,
+  name TEXT,
+  quantity INTEGER,
+  price INTEGER
 );
 
 INSERT INTO store VALUES (1, "Pentel Graph 1000", 100, 30);
