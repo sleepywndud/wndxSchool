@@ -7,3 +7,9 @@ WHERE CITY
     OR CITY LIKE '%o'
     OR CITY LIKE '%u'
 ;
+
+/**-----------------------**/
+
+SELECT DISTINCT(CITY) 
+FROM STATION 
+WHERE RIGHT(CITY, 1) IN('A', 'E', 'I', 'O', 'U') 
