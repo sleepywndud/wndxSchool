@@ -1,4 +1,7 @@
 import sqlite3
+import os
+
+os.system("CLEAR")
 
 db = sqlite3.connect("Rugby.db")
 cr = db.cursor()
