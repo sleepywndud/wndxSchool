@@ -7,3 +7,4 @@ all = cr.execute("SELECT * FROM player;")
 for i in all:
     print(i)
 
+db.close()
