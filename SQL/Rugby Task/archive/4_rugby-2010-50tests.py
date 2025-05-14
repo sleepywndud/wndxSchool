@@ -11,10 +11,7 @@ all = cr.execute("""
     FROM player
     WHERE debut_year > 2010
         AND test_caps > 50
-""")
+""").fetchall()
 
-results = cr.fetchall()
-
-# Print each row in a formatted way
-for i in results:
-    print(f"{i[0]} {i[1]}")
+for i in all:
+    print(i)
