@@ -6,15 +6,14 @@ os.system("CLEAR")
 db = sqlite3.connect("Rugby.db")
 cr = db.cursor()
 
-all = cr.execute("""
-    SELECT first_name, last_name
-    FROM player
-    WHERE debut_year > 2010
-        AND test_caps > 50
-""")
+def all_players():
+    all = cr.execute("""
+        SELECT * FROM player
+    """).fetchall()
 
-results = cr.fetchall()
+    db.close()
 
-# Print each row in a formatted way
-for i in results:
-    print(f"{i[0]} {i[1]}")
+    for client in all:
+        print(client)
+
+all_players()
