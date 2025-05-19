@@ -12,6 +12,7 @@ def all_players():
         FROM player
         ;
     """).fetchall()
+    
     for client in all:
         print(client)
     db.close()
@@ -23,19 +24,21 @@ def first_last_name():
         WHERE position = "Fly-half"
         ;
     """).fetchall()
+
     for client in all:
         print(client[0], client[1])
     db.close()
 
-def first_last_name():
+def most_point():
     all = cr.execute("""
-        SELECT first_name, last_name
+        SELECT first_name, last_name, debut_year
         FROM player
-        WHERE position = "Fly-half"
+        WHERE points_scored = (SELECT MAX(points_scored) FROM player)
         ;
     """).fetchall()
+
     for client in all:
-        print(client[0], client[1])
+        print(client[0], client[1], client[2])
     db.close()
 
-first_last_name()
+most_point()
