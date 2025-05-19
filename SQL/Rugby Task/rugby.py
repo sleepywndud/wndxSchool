@@ -12,7 +12,7 @@ def all_players():
         FROM player
         ;
     """).fetchall()
-    
+
     for client in all:
         print(client)
     db.close()
@@ -38,7 +38,19 @@ def most_point():
     """).fetchall()
 
     for client in all:
-        print(client[0], client[1], client[2])
+        print(f"{client[0]} {client[1]}, {client[2]}")
+    db.close()
+
+def fifty_test():
+    all = cr.execute("""
+        SELECT first_name, last_name, debut_year
+        FROM player
+        WHERE points_scored = (SELECT MAX(points_scored) FROM player)
+        ;
+    """).fetchall()
+
+    for client in all:
+        print(f"{client[0]} {client[1]}, {client[2]}")
     db.close()
 
 most_point()
