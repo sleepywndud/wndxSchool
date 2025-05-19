@@ -8,11 +8,23 @@ cr = db.cursor()
 
 def all_players():
     all = cr.execute("""
-        SELECT * FROM player
+        SELECT * 
+        FROM player
+        ;
     """).fetchall()
     for client in all:
         print(client)
-    
     db.close()
 
-all_players()
+def first_last_name():
+    all = cr.execute("""
+        SELECT first_name, last_name
+        FROM player
+        WHERE position = "Fly-half"
+        ;
+    """).fetchall()
+    for client in all:
+        print(client[0], client[1])
+    db.close()
+
+first_last_name()
