@@ -27,4 +27,15 @@ def first_last_name():
         print(client[0], client[1])
     db.close()
 
+def first_last_name():
+    all = cr.execute("""
+        SELECT first_name, last_name
+        FROM player
+        WHERE position = "Fly-half"
+        ;
+    """).fetchall()
+    for client in all:
+        print(client[0], client[1])
+    db.close()
+
 first_last_name()
