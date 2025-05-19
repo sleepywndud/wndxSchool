@@ -10,10 +10,9 @@ def all_players():
     all = cr.execute("""
         SELECT * FROM player
     """).fetchall()
-
-    db.close()
-
     for client in all:
         print(client)
+    
+    db.close()
 
 all_players()
