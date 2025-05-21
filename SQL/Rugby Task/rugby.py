@@ -1,7 +1,7 @@
 """Program connecting SQLite (rugby) database and run queries (functions)."""
 
 import sqlite3
-import tabulate
+from tabulate import tabulate
 import os
 
 os.system("CLEAR")
@@ -16,8 +16,12 @@ def all_players():
         ;
     """).fetchall()
 
-    for client in all:
-        print(client)
+    headings = ["ID" ,"First Name", "Last Name", "Position", "Debut Year", "Test Caps", "Tries Scored", "Points Scored"]
+    alignments = ["left", "left", "left", "center", "center", "center", "center", "center"]
+
+    print("Names:\n")
+    
+    print(tabulate(all, headings, tablefmt="plain", colalign=alignments))
     db.close()
 
 def first_last_name():
@@ -57,3 +61,4 @@ def fifty_tests():
         print(f"{client[0]} {client[1]}")
     db.close()
 
+all_players()
