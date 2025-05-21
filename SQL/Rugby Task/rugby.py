@@ -1,13 +1,14 @@
 """Program connecting SQLite (rugby) database and run queries (functions)."""
 
 import sqlite3
-from tabulate import tabulate
+import tabulate
 import os
 
 os.system("CLEAR")
 
 db = sqlite3.connect("Rugby.db")
 cr = db.cursor()
+
 
 def all_players():
     all = cr.execute("""
@@ -16,13 +17,32 @@ def all_players():
         ;
     """).fetchall()
 
-    headings = ["ID" ,"First Name", "Last Name", "Position", "Debut Year", "Test Caps", "Tries Scored", "Points Scored"]
-    alignments = ["left", "left", "left", "center", "center", "center", "center", "center"]
+    headings = [
+        "ID",
+        "First Name",
+        "Last Name",
+        "Position",
+        "Debut Year",
+        "Test Caps",
+        "Tries Scored",
+        "Points Scored",
+    ]
+    alignments = [
+        "left",
+        "left",
+        "left",
+        "center",
+        "center",
+        "center",
+        "center",
+        "center",
+    ]
 
     print("Names:\n")
-    
-    print(tabulate(all, headings, tablefmt="plain", colalign=alignments))
+
+    print(tabulate(all, headings, colalign=alignments))
     db.close()
+
 
 def first_last_name():
     all = cr.execute("""
@@ -32,9 +52,14 @@ def first_last_name():
         ;
     """).fetchall()
 
-    for client in all:
-        print(client[0], client[1])
+    headings = ["First Name", "Last Name"]
+    alignments = ["left", "left"]
+
+    print("First & last Name of all fly-halfs:\n")
+
+    print(tabulate(all, headings, colalign=alignments))
     db.close()
+
 
 def most_point():
     all = cr.execute("""
@@ -44,9 +69,14 @@ def most_point():
         ;
     """).fetchall()
 
-    for client in all:
-        print(f"{client[0]} {client[1]}, {client[2]}")
+    headings = ["First Name", "Last Name", "Debut Year"]
+    alignments = ["left", "left"]
+
+    print("Player who has scored the most points:\n")
+
+    print(tabulate(all, headings, colalign=alignments))
     db.close()
+
 
 def fifty_tests():
     all = cr.execute("""
@@ -57,8 +87,17 @@ def fifty_tests():
         ;
     """).fetchall()
 
-    for client in all:
-        print(f"{client[0]} {client[1]}")
+    headings = ["First Name", "Last Name"]
+    alignments = ["left", "left"]
+
+    print(
+        "Players who have started playing after 2010 who has more than 50 test caps:\n"
+    )
+
+    print(tabulate(all, headings, colalign=alignments))
     db.close()
 
-all_players()
+
+print("Welcome to a Python Program")
+fifty_tests()
+
