@@ -98,7 +98,23 @@ def fifty_tests():
     db.close()
 
 
-print("Welcome to a Python Program that searches the All Blacks Database!")
-print("Please choose a function from below:")
-fifty_tests()
+while True:
+    print("Welcome to a Python Program that searches the All Blacks Database!")
+    print("Please choose a function from below:")
 
+    userinput = int(input("""
+1. Fetch Data of All Players
+2. Fetch First & Last Names of All 'Fly-Half' Players
+3. Fetch Player's First & Last Name who scored the most Points
+4. Fetch player's first & last name who played more than 50 tests.\n\n\n"""))
+    
+    if userinput == 1:
+        all_players()
+    elif userinput == 2:
+        first_last_name()
+    elif userinput == 3:
+        most_point()
+    elif userinput == 4:
+        fifty_tests()
+    else:
+        print("Invalid Input.")
