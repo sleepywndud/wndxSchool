@@ -98,6 +98,7 @@ def fifty_tests():
     db.close()
 
 
-print("Welcome to a Python Program")
+print("Welcome to a Python Program that searches the All Blacks Database!")
+print("Please choose a function from below:")
 fifty_tests()
 
