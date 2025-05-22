@@ -42,7 +42,7 @@ def all_players():
     ]
     clear()
 
-    print("Data of all playersa:\n")
+    print("Data of all players:\n")
 
     print(tabulate(all, headings, colalign=alignments))
     db.close()
@@ -113,16 +113,18 @@ def fifty_tests():
     print(tabulate(all, headings, colalign=alignments))
     db.close()
 
-print("\nWelcome to a Python Program that searches the All Blacks Database!")
+clear()
+
+print("\nWelcome! This program lets you query the All Blacks Database.")
 print("Please choose a function from below:")
 
 while True:
     try:
-        userinput = int(input("""
+        userinput = input("""
 1. Fetch Data of All Players
 2. Fetch First & Last Names of All 'Fly-Half' Players
 3. Fetch Player's First & Last Name who scored the most Points
-4. Fetch player's first & last name who played more than 50 tests.\n\n\n"""))
+4. Fetch player's first & last name who played more than 50 tests.\n\n\nEnter Function: """)
         
         if userinput == 1:
             all_players()
@@ -132,10 +134,15 @@ while True:
             most_point()
         elif userinput == 4:
             fifty_tests()
+        elif userinput.lower() == "bobo":
+            clear()
+            print("Bye.")
+            break
         else:
             clear()
             print("Invalid Input.")
             continue
 
     except ValueError:
+        clear()
         print("Invalid Input.")
