@@ -1,7 +1,7 @@
 """Program connecting SQLite (rugby) database and run queries (functions)."""
 
 import sqlite3
-import tabulate
+from tabulate import tabulate
 import os
 
 os.system("CLEAR")
@@ -99,7 +99,7 @@ def fifty_tests():
 
 
 while True:
-    print("Welcome to a Python Program that searches the All Blacks Database!")
+    print("\nWelcome to a Python Program that searches the All Blacks Database!")
     print("Please choose a function from below:")
 
     userinput = int(input("""
@@ -107,14 +107,18 @@ while True:
 2. Fetch First & Last Names of All 'Fly-Half' Players
 3. Fetch Player's First & Last Name who scored the most Points
 4. Fetch player's first & last name who played more than 50 tests.\n\n\n"""))
-    
-    if userinput == 1:
-        all_players()
-    elif userinput == 2:
-        first_last_name()
-    elif userinput == 3:
-        most_point()
-    elif userinput == 4:
-        fifty_tests()
-    else:
+
+    try:
+        if userinput == 1:
+            all_players()
+        elif userinput == 2:
+            first_last_name()
+        elif userinput == 3:
+            most_point()
+        elif userinput == 4:
+            fifty_tests()
+        else:
+            print("Invalid Input.")
+        
+    except ValueError:
         print("Invalid Input.")
