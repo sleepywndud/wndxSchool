@@ -10,7 +10,6 @@ def clear():
     else:
         os.system("clear")
 
-
 def all_players():
     db = sqlite3.connect("Rugby.db")
     cr = db.cursor()
