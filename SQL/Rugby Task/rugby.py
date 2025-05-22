@@ -4,13 +4,17 @@ import sqlite3
 from tabulate import tabulate
 import os
 
-os.system("CLEAR")
-
-db = sqlite3.connect("Rugby.db")
-cr = db.cursor()
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 
 def all_players():
+    db = sqlite3.connect("Rugby.db")
+    cr = db.cursor()
+
     all = cr.execute("""
         SELECT * 
         FROM player
@@ -37,14 +41,17 @@ def all_players():
         "center",
         "center",
     ]
+    clear()
 
-    print("Names:\n")
+    print("Data of all playersa:\n")
 
     print(tabulate(all, headings, colalign=alignments))
     db.close()
 
-
 def first_last_name():
+    db = sqlite3.connect("Rugby.db")
+    cr = db.cursor()
+
     all = cr.execute("""
         SELECT first_name, last_name
         FROM player
@@ -55,13 +62,17 @@ def first_last_name():
     headings = ["First Name", "Last Name"]
     alignments = ["left", "left"]
 
+    clear()
+
     print("First & last Name of all fly-halfs:\n")
 
     print(tabulate(all, headings, colalign=alignments))
     db.close()
 
-
 def most_point():
+    db = sqlite3.connect("Rugby.db")
+    cr = db.cursor()
+
     all = cr.execute("""
         SELECT first_name, last_name, debut_year
         FROM player
@@ -72,13 +83,17 @@ def most_point():
     headings = ["First Name", "Last Name", "Debut Year"]
     alignments = ["left", "left"]
 
+    clear()
+
     print("Player who has scored the most points:\n")
 
     print(tabulate(all, headings, colalign=alignments))
     db.close()
 
-
 def fifty_tests():
+    db = sqlite3.connect("Rugby.db")
+    cr = db.cursor()
+    
     all = cr.execute("""
         SELECT first_name, last_name
         FROM player
@@ -90,6 +105,8 @@ def fifty_tests():
     headings = ["First Name", "Last Name"]
     alignments = ["left", "left"]
 
+    clear()
+
     print(
         "Players who have started playing after 2010 who has more than 50 test caps:\n"
     )
@@ -97,18 +114,17 @@ def fifty_tests():
     print(tabulate(all, headings, colalign=alignments))
     db.close()
 
+print("\nWelcome to a Python Program that searches the All Blacks Database!")
+print("Please choose a function from below:")
 
 while True:
-    print("\nWelcome to a Python Program that searches the All Blacks Database!")
-    print("Please choose a function from below:")
-
-    userinput = int(input("""
+    try:
+        userinput = int(input("""
 1. Fetch Data of All Players
 2. Fetch First & Last Names of All 'Fly-Half' Players
 3. Fetch Player's First & Last Name who scored the most Points
 4. Fetch player's first & last name who played more than 50 tests.\n\n\n"""))
-
-    try:
+        
         if userinput == 1:
             all_players()
         elif userinput == 2:
@@ -118,7 +134,9 @@ while True:
         elif userinput == 4:
             fifty_tests()
         else:
+            clear()
             print("Invalid Input.")
-        
+            continue
+
     except ValueError:
         print("Invalid Input.")
