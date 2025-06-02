@@ -1,4 +1,5 @@
-"""Program connecting SQLite (rugby) database and run queries (functions)."""
+"""Program connecting SQLite (rugby) database to run queries (functions) using Python.  """
+"""Created By: sleepywndud                                                  May 2025    """
 
 import sqlite3
 from tabulate import tabulate
